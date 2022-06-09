@@ -155,7 +155,7 @@ export function Login() {
 							type='password'
 							margin='normal'
 							variant='outlined'
-							label='Contraseñ a'
+							label='Contraseña'
 							name='password'
 							value={user.password}
 							onChange={handleChange}
