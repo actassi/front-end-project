@@ -6,7 +6,7 @@ export default function More({ moreNews }) {
 
 	return (
 		<Box my={4}>
-			<Typography variant="h6">MÁS</Typography>
+			<Typography variant="h6" fontWeight="bold">MÁS</Typography>
 			<Divider />
 			<Grid mt={2} container spacing={3}>
 				{moreNews.map((item, i) =>

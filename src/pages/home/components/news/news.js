@@ -32,7 +32,7 @@ export default function News() {
 					<Grid item md={9}>
 						<Grid container
 							direction="row"
-
+							rowGap={4}
 						>
 							<Grid item md={6}>
 								<CardArticle item={news[0]} size="large" />
