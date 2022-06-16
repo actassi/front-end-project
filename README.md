@@ -19,4 +19,15 @@
 * Context
 * BrowserRouter
 
-## Arquitectura
+## Estructura del proyecto
+
+* #### public
+* #### src
+	* <strong>components:</strong> Componentes reutilizables en toda la app. Por ejemplo alert.js se puede reutilizar en varios otras 			vistas/componentes.
+	* <strong>context:</strong> Todos los contextos que serán accesibles desde toda la app.
+	* <strong>hooks:</strong> Todos los hooks que serán accesibles desde toda la app. 
+	* <strong>pages:</strong> Todos los views que tendrá la app. por ejemplo la home, el login, el registro, la pagina donde estará el fixture.
+		* <strong>carpeta de cada page:</strong> Carpeta que contendrá todo lo que la page utilizará para su funcionamiento y que no se reutilizaran en otro page. Por ejemplo components que solo se usaran en esta page, hooks, styled components.
+	* <strong>services:</strong> Todos los servicios y conexiones a apis que se utilicen.
+	* <strong>styled-components:</strong> Todos los styled components que se reutilizaran en la app.
+	* <strong>utils:</strong> Todo lo que sea reutilizable y sirva para parsear, formatear algo en la app.
