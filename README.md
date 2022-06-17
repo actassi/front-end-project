@@ -36,11 +36,12 @@
 ## Como recuperar datos de Firebase 
 
 #### 1. Heredar de baseService.
- 	Crear clase que corresponda con la tabla de firebase que se quiera recuperar, por ejemplo newsService.js traera todo lo referido a la tabla news(noticias) de firebase. Heredar de la clase baseService.js para recibir todos los metodos de la misma. 
+Crear clase que corresponda con la tabla de firebase que se quiera recuperar, por ejemplo newsService.js traera todo lo referido a la tabla news(noticias) de firebase. Heredar de la clase baseService.js para recibir todos los metodos de la misma. 
 
 BaseService.js:
+
 ```javascript
-    
+
 import { query, where, collection, getDocs, doc, getDoc, addDoc, orderBy } from 'firebase/firestore';
 import { db } from '../firebase';
 
