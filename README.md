@@ -32,3 +32,130 @@
 	* <strong>services:</strong> Todos los servicios y conexiones a apis que se utilicen.
 	* <strong>styled-components:</strong> Todos los styled components que se reutilizaran en la app.
 	* <strong>utils:</strong> Todo lo que sea reutilizable y sirva para parsear, formatear algo en la app.
+
+## Como recuperar datos de Firebase 
+
+#### 1. Heredar de baseService.
+ 	Crear clase que corresponda con la tabla de firebase que se quiera recuperar, por ejemplo newsService.js traera todo lo referido a la tabla news(noticias) de firebase. Heredar de la clase baseService.js para recibir todos los metodos de la misma. 
+
+BaseService.js:
+```javascript
+    
+import { query, where, collection, getDocs, doc, getDoc, addDoc, orderBy } from 'firebase/firestore';
+import { db } from '../firebase';
+
+export default class BaseService {
+
+	constructor(collectionName) {
+		this.collectionName = collectionName;
+		this.collectionDoc = collection(db, collectionName)
+	}
+
+	get = (operator, filterField, value) => {
+
+		if (operator && filterField && value !== undefined) {
+			const q = query(this.collectionDoc, where(filterField, operator, value), orderBy("id"));
+			return getDocs(q);
+		} else {
+			const q = query(this.collectionDoc, orderBy("id"));
+			return getDocs(q);
+		}
+	}
+
+	add = (doc) => {
+		return addDoc(this.collectionDoc, doc);
+	}
+}
+```
+De esta forma todo el codigo referido a firebase está encapsulado en un solo lugar.
+
+Ejemplo de implementación en newsService.js:
+```javascript
+import BaseService from "./baseService";
+
+export default class NewsService extends BaseService {
+
+	constructor() {
+		super('news');
+	}
+
+	getAll = () => {
+		return this.get();
+	}
+
+	getById = (id) => {
+		return this.get("==", 'id', parseInt(id));
+	}
+
+}
+```
+
+#### 2. Como llamar al service creado.
+
+Crear una instancia del servicio.
+	
+```javascript
+const newsService = new NewsService()
+```
+
+Ejemplo de como llamar a getAll() :
+
+Retorna una promise , por lo tanto se debe crear un then para el caso de que retorne los datos correctamente y/o un catch para el error.
+el then retorna un array de de docs, por lo tanto luego se realiza un forEach para recorrer cada doc y poder extraer los datos de la entidad, en este caso la tabla news. Con la funcion data() se obtienen todos los datos de cada registro news. Luego se setea en otro array para poder tenerlos en un state.
+  
+```javascript
+
+const newsAux = []
+const [news, setNews] = useState([])
+const [loading, setLoading] = useState(true)
+
+newsService.getAll().then(response => {
+
+	response.forEach((doc) => {
+		const item = {
+			...doc.data()
+		}
+		newsAux.push(item)
+	})
+	setNews(newsAux)
+	setLoading(false)
+}) 
+```
+
+#### 3. Buena practica, separar logica de datos de la vista.
+ El código anterior se puede ejecutar en cualquier componente que se desee, pero una buena practica es encapsularlo en un custom hook para que la logica sea mucho mas limpia y reutilizable, ademas será mucho mas facil separar la logica de datos y la vista.
+ 
+custom hook useNews : 
+```javascript
+import { useEffect, useState } from "react";
+import NewsService from "../services/newsService";
+
+export default function useNews() {
+
+	const newsService = new NewsService()
+	const newsAux = []
+	const [news, setNews] = useState([])
+	const [loading, setLoading] = useState(true)
+
+	useEffect(() => {
+		newsService.getAll().then(response => {
+
+			response.forEach((doc) => {
+				const item = {
+					...doc.data()
+				}
+				newsAux.push(item)
+			})
+			setNews(newsAux)
+			setLoading(false)
+		})
+	}, [])
+
+	return { news, loading }
+}
+```
+
+y se llamaria en cualquier componente de esta manera:
+```javascript
+const { news, loading } = useNews()
+```
