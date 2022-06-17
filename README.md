@@ -21,7 +21,8 @@
 
 ## Estructura del proyecto
 
-* #### public
+* #### public: 
+	Recursos imgs, videos, favicon etc.
 * #### src
 	* <strong>components:</strong> Componentes reutilizables en toda la app. Por ejemplo alert.js se puede reutilizar en varios otras 			vistas/componentes.
 	* <strong>context:</strong> Todos los contextos que serán accesibles desde toda la app.
