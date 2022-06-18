@@ -4,6 +4,7 @@
 ## App prode mundial e info deportiva
 <br>
 
+link: https://imaginative-kataifi-9806b9.netlify.app/
 ## Funcionalidades
 * ### Page Home
 	* Contador para comenzar el mundial.
@@ -30,7 +31,7 @@
 	* <strong>pages:</strong> Todos los views que tendrá la app. por ejemplo la home, el login, el registro, la pagina donde estará el fixture.
 		* <strong>carpeta de cada page:</strong> Carpeta que contendrá todo lo que la page utilizará para su funcionamiento y que no se reutilizaran en otro page. Por ejemplo components que solo se usaran en esta page, hooks, styled components.
 	* <strong>services:</strong> Todos los servicios y conexiones a apis que se utilicen.
-	* <strong>styled-components:</strong> Todos los styled components que se reutilizaran en la app.
+	* <strong>styledComponents:</strong> Todos los styled components que se reutilizaran en la app.
 	* <strong>utils:</strong> Todo lo que sea reutilizable y sirva para parsear, formatear algo en la app.
 
 ## Como recuperar datos de Firebase 
