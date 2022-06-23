@@ -11,7 +11,7 @@ export default class BaseService {
 	get = (operator, filterField, value) => {
 
 		if (operator && filterField && value !== undefined) {
-			const q = query(this.collectionDoc, where(filterField, operator, value), orderBy("id"));
+			const q = query(this.collectionDoc, where(filterField, operator, value))
 			return getDocs(q);
 		} else {
 			const q = query(this.collectionDoc, orderBy("id"));

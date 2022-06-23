@@ -1,7 +1,7 @@
 import { Stack } from "@mui/material";
 import Banner from "./components/banner";
 import Counter from "./components/counter";
-import News from "./components/news/news";
+import News from "./components/news";
 import Sponsors from "./components/sponsors";
 
 export default function Home() {

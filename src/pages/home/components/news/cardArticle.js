@@ -1,5 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
+import { Link } from "react-router-dom";
 import FormatDate from "../../../../utils/formatDate";
 
 export default function CardArticle({ item, size }) {
@@ -19,33 +20,35 @@ export default function CardArticle({ item, size }) {
 	}
 
 	return (
-		<Stack direction={size === "small" ? "row" : "column"}
-			spacing={2}
-			height="100%"
-			justifyContent="flex-start"
-			alignContent="center"
-		>
-			<div>
-				<img style={{ borderTopLeftRadius: "6px", borderTopRightRadius: "6px" }} src={srcImg} alt={item.title} />
-			</div>
-			<Stack spacing={2} pr={4} height="100%" direction="column" justifyContent="space-between">
-				<Box>
-					<Typography variant="subtitle2" color="GrayText">Copa Mundial de la FIFA Catar 2022™</Typography>
-					<Typography fontWeight="bold" variant={size === "small" ? "subtitle1" : "h6"}
-						sx={{
-							display: "-webkit-box",
-							WebkitLineClamp: 3,
-							WebkitBoxOrient: "vertical",
-							overflow: 'hidden'
-						}}>{item.title}</Typography>
-				</Box>
-				<Typography variant="subtitle2">
-					{size === "small" ? "" :
-						<FormatDate date={item.date.toDate()} />
-					}
-				</Typography>
-			</Stack>
+		<Link style={{ color: "inherit", textDecoration: "none" }} to={"/newsItemDetail/" + item.id}>
+			<Stack direction={size === "small" ? "row" : "column"}
+				spacing={2}
+				height="100%"
+				justifyContent="flex-start"
+				alignContent="center"
+			>
+				<div>
+					<img style={{ borderTopLeftRadius: "6px", borderTopRightRadius: "6px" }} src={srcImg} alt={item.title} />
+				</div>
+				<Stack spacing={2} pr={4} height="100%" direction="column" justifyContent="space-between">
+					<Box>
+						<Typography variant="subtitle2" color="GrayText">Copa Mundial de la FIFA Catar 2022™</Typography>
+						<Typography fontWeight="bold" variant={size === "small" ? "subtitle1" : "h6"}
+							sx={{
+								display: "-webkit-box",
+								WebkitLineClamp: 3,
+								WebkitBoxOrient: "vertical",
+								overflow: 'hidden'
+							}}>{item.title}</Typography>
+					</Box>
+					<Typography variant="subtitle2">
+						{size === "small" ? "" :
+							<FormatDate date={item.date.toDate()} />
+						}
+					</Typography>
+				</Stack>
 
-		</Stack >
+			</Stack >
+		</Link>
 	)
 }

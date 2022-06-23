@@ -1,15 +1,13 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Login } from "./components/login";
 import { Register } from "./components/register";
-import NavBar from "./components/navBar";
 import { ProtectedRoute } from "./components/protectedRoute";
-
 import { AuthProvider } from "./context/authContext";
 import { ColorModeContextProvider } from "./context/colorModeContext";
-import Home from "./pages/home/home";
+import Home from "./pages/home";
 import { createTheme } from "@mui/material";
 import Footer from "./components/footer";
+import NewsItemDetail from "./pages/newsItemDetail";
 
 function App() {
 	const theme = createTheme({
@@ -46,6 +44,7 @@ function App() {
 							}
 						/>
 						<Route path="/register" element={<Register />} />
+						<Route path="/newsItemDetail/:id" element={<NewsItemDetail />} />
 					</Routes>
 
 				</AuthProvider>
