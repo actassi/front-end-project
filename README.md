@@ -161,3 +161,10 @@ y se llamaria en cualquier componente de esta manera:
 ```javascript
 const { news, loading } = useNews()
 ```
+
+## Status Tareas
+
+| Pages/Componentes | Nombre | Status |
+| ------------- | ------------- | ------------- |
+| Registro, Login, Perdi mi contraseña  | Andrea Tassi  | Done |
+| Home Page, Detalle noticia page, footer, firebase service  | Seba  |Done  |
