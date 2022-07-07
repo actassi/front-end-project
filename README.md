@@ -168,3 +168,4 @@ const { news, loading } = useNews()
 | ------------- | ------------- | ------------- |
 | Registro, Login, Perdi mi contraseña  | Andrea Tassi  | Done |
 | Home Page, Detalle noticia page, footer, firebase service  | Seba  |Done  |
+| DarkMode y NavBar| Seba  | In Progress  |
