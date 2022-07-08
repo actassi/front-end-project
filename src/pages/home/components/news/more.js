@@ -1,12 +1,12 @@
 import { Divider, Grid, Box } from '@mui/material'
-import Typography from '@mui/material/Typography'
+import { Title } from '../../../../styledComponents/fifaTypography'
 import CardArticle from './cardArticle'
 
 export default function More({ moreNews }) {
 
 	return (
 		<Box my={4}>
-			<Typography variant="h6" fontWeight="bold">MÁS</Typography>
+			<Title variant="h6">MÁS</Title>
 			<Divider />
 			<Grid mt={2} container spacing={3}>
 				{moreNews.map((item, i) =>

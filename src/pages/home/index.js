@@ -6,7 +6,7 @@ import Sponsors from "./components/sponsors";
 
 export default function Home() {
 	return (
-		<Stack width="100%" direction="column" spacing={4} alignItems="center">
+		<Stack bgcolor={"background.default"} width="100%" direction="column" spacing={4} alignItems="center">
 			<Banner />
 			<Counter />
 			<News />

@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { ContainerBanner, TextBanner } from '../../../styledComponents/Banner';
+import { ContainerBanner, TextBanner } from '../../../styledComponents/banner';
 
 export default function Banner() {
 	return (

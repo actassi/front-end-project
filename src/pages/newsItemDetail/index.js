@@ -1,7 +1,7 @@
 import { Stack, Typography } from "@mui/material"
 import { useParams } from "react-router-dom"
 import useNews from "../../hooks/useNews"
-import { ContainerBanner, TextBanner } from "../../styledComponents/Banner"
+import { ContainerBanner, TextBanner } from "../../styledComponents/banner"
 import Body from "./components/body"
 
 export default function NewsItemDetail() {

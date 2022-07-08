@@ -1,5 +1,6 @@
-import { Stack, Typography } from "@mui/material";
+import { Stack } from "@mui/material";
 import { Box } from "@mui/system";
+import { Title } from "../../../styledComponents/fifaTypography";
 
 export default function Sponsors() {
 
@@ -29,7 +30,7 @@ export default function Sponsors() {
 	return (
 		<Stack direction="column" alignItems="center" >
 
-			<Typography variant="h5" fontWeight="bold" mb={2}> FIFA SOCIOS </Typography>
+			<Title variant="h5" mb={2}> FIFA SOCIOS </Title>
 			<Stack
 				direction="row"
 				justifyContent="center"
@@ -45,7 +46,7 @@ export default function Sponsors() {
 				)}
 
 			</Stack>
-			<Typography variant="h5" fontWeight="bold" mb={3}>COPA MUNDIAL DE LA FIFA™ PATROCINADORES</Typography>
+			<Title variant="h5" mb={3}>COPA MUNDIAL DE LA FIFA™ PATROCINADORES</Title>
 			<Stack
 				direction="row"
 				justifyContent="center"

@@ -1,6 +1,7 @@
-import { Grid, Stack, Typography } from "@mui/material";
+import { Button, Grid, Stack, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import useNews from "../../../../hooks/useNews";
+import { SubTitle, Title } from "../../../../styledComponents/fifaTypography";
 
 import CardArticle from "./cardArticle";
 import More from "./more";
@@ -20,13 +21,13 @@ export default function News() {
 							spacing={3}
 							flexWrap="wrap"
 						>
-							<Typography variant="h4" fontWeight="bold">
+							<Title variant="h4">
 								NOTICIAS
-							</Typography>
-							<Typography variant="subtitle1" >
+							</Title>
+							<SubTitle>
 								Entrevistas, noticias y reportajes de la Copa Mundial de la FIFA Catar 2022™.
-							</Typography>
-							<Typography variant="button">Lee todas las noticias de Catar 2022</Typography>
+							</SubTitle>
+							<Button color="primary">Lee todas las noticias de Catar 2022</Button>
 						</Stack>
 					</Grid>
 					<Grid item md={9}>

@@ -1,6 +1,7 @@
 import { Stack, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import { Link } from "react-router-dom";
+import { Title } from "../../../../styledComponents/fifaTypography";
 import FormatDate from "../../../../utils/formatDate";
 
 export default function CardArticle({ item, size }) {
@@ -33,15 +34,16 @@ export default function CardArticle({ item, size }) {
 				<Stack spacing={2} pr={4} height="100%" direction="column" justifyContent="space-between">
 					<Box>
 						<Typography variant="subtitle2" color="GrayText">Copa Mundial de la FIFA Catar 2022™</Typography>
-						<Typography fontWeight="bold" variant={size === "small" ? "subtitle1" : "h6"}
+						<Title variant={size === "small" ? "subtitle1" : "h6"}
 							sx={{
 								display: "-webkit-box",
 								WebkitLineClamp: 3,
 								WebkitBoxOrient: "vertical",
 								overflow: 'hidden'
-							}}>{item.title}</Typography>
+							}}>{item.title}
+						</Title>
 					</Box>
-					<Typography variant="subtitle2">
+					<Typography color="text.primary" variant="subtitle2">
 						{size === "small" ? "" :
 							<FormatDate date={item.date.toDate()} />
 						}

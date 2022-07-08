@@ -8,6 +8,8 @@ import Home from "./pages/home";
 import { createTheme } from "@mui/material";
 import Footer from "./components/footer";
 import NewsItemDetail from "./pages/newsItemDetail";
+import NavBar from "./components/navBar";
+
 
 function App() {
 	const theme = createTheme({
@@ -27,29 +29,24 @@ function App() {
 
 	return (
 		<ColorModeContextProvider>
-			<div className="app-container">
-				<AuthProvider>
-					{/* <div className="sidebar-container">
-						<NavBar name="loco gatti" avatar="imgs/profile_picture.jpg" />
-					</div> */}
+			<AuthProvider>
+				<NavBar />
+				<Routes>
+					<Route path="/login" element={<Login />} />
+					<Route
+						path="/"
+						element={
+							<ProtectedRoute>
+								<Home />
+							</ProtectedRoute>
+						}
+					/>
+					<Route path="/register" element={<Register />} />
+					<Route path="/newsItemDetail/:id" element={<NewsItemDetail />} />
+				</Routes>
+				<Footer />
+			</AuthProvider>
 
-					<Routes>
-						<Route path="/login" element={<Login />} />
-						<Route
-							path="/"
-							element={
-								<ProtectedRoute>
-									<Home />
-								</ProtectedRoute>
-							}
-						/>
-						<Route path="/register" element={<Register />} />
-						<Route path="/newsItemDetail/:id" element={<NewsItemDetail />} />
-					</Routes>
-
-				</AuthProvider>
-			</div>
-			<Footer />
 		</ColorModeContextProvider>
 	);
 }
