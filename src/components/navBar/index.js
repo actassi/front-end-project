@@ -16,6 +16,7 @@ import Logo from '../logo';
 import { Stack } from '@mui/material';
 import { ColorModeContext } from '../../context/colorModeContext';
 import { useAuth } from '../../context/authContext';
+import { useNavigate } from 'react-router-dom';
 
 
 const NavBar = () => {
@@ -24,22 +25,11 @@ const NavBar = () => {
 	const { mode, toggleColorMode } = React.useContext(ColorModeContext);
 	const [isLoged, setLoged] = React.useState(true);
 	const { logout, user } = useAuth();
+	const navigate = useNavigate()
 
 	const handleOpenNavMenu = (event) => {
 		setAnchorElNav(event.currentTarget);
 	};
-	const handleOpenUserMenu = (event) => {
-		setAnchorElUser(event.currentTarget);
-	};
-
-	const handleCloseNavMenu = () => {
-		setAnchorElNav(null);
-	};
-
-	const handleCloseUserMenu = () => {
-		setAnchorElUser(null);
-	};
-
 	const handleDarkMode = () => {
 		toggleColorMode();
 	};
@@ -47,8 +37,12 @@ const NavBar = () => {
 	const handleLoged = () => {
 		logout();
 	};
+
+	const handleHome = () => {
+		navigate('/')
+	}
 	return (
-		<AppBar position="absolute" sx={{ bgcolor: "background.default" }}>
+		(user) && <AppBar position="absolute" sx={{ bgcolor: "background.default" }}>
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
 
@@ -62,45 +56,6 @@ const NavBar = () => {
 						<Logo />
 					</Box>
 
-					<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-						<IconButton
-							size="large"
-							aria-label="account of current user"
-							aria-controls="menu-appbar"
-							aria-haspopup="true"
-							onClick={handleOpenNavMenu}
-							color="inherit"
-						>
-							<MenuIcon />
-						</IconButton>
-						<Menu
-							id="menu-appbar"
-							anchorEl={anchorElNav}
-							anchorOrigin={{
-								vertical: 'bottom',
-								horizontal: 'left',
-							}}
-							keepMounted
-							transformOrigin={{
-								vertical: 'top',
-								horizontal: 'left',
-							}}
-							open={Boolean(anchorElNav)}
-							onClose={handleCloseNavMenu}
-							sx={{
-								display: { xs: 'block', md: 'none' },
-							}}
-						>
-							<MenuItem>
-								<Typography textAlign="center">Home</Typography>
-							</MenuItem>
-							<MenuItem>
-								<Typography textAlign="center">Fixture</Typography>
-							</MenuItem>
-
-						</Menu>
-					</Box>
-
 					<Box mr={2} sx={{
 						display: { xs: 'flex', md: 'none' },
 					}}
@@ -108,22 +63,12 @@ const NavBar = () => {
 						<Logo />
 					</Box>
 					<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-						<Button
-							onClick={handleCloseNavMenu}
-							color="primary"
-						>
-							Home
-						</Button>
-						<Button
-							onClick={handleCloseNavMenu}
-							color="primary"
-						>
-							Fixture
-						</Button>
+						<Button onClick={handleHome} color="primary">Home</Button>
+						<Button color="primary">Fixture</Button>
 					</Box>
 					<Stack direction={"row"} alignItems="center">
 						<Button color="primary">Perfil</Button>
-						<Button color="primary">{(isLoged) ? "Cerrar sesión" : "Iniciar sesión"}</Button>
+						<Button onClick={handleLoged} color="primary">{(isLoged) ? "Cerrar sesión" : "Iniciar sesión"}</Button>
 						<Button onClick={handleDarkMode} color="primary">
 							{(mode === 'light') ? "Dark Mode" : "Light Mode"}
 						</Button>

@@ -1,17 +1,16 @@
-import Typography from '@mui/material/Typography'
 import { Container } from '@mui/system'
+import { SubTitle, Body as P } from '../../../styledComponents/fifaTypography'
+import Summary from './summary'
 
 export default function Body({ summary, body }) {
 	return (
 		<Container maxWidth="md">
 
-			{summary?.map((s, index) =>
-				<Typography key={index} variant="subtitle1">* {s}</Typography>
-			)}
+			<Summary items={summary} />
 
 			{body.map((p, index) =>
 
-				<Typography key={index} variant="body1" pt={2}>{p}</Typography>
+				<P key={index} variant="body1" pt={2}>{p}</P>
 			)}
 		</Container>
 	)

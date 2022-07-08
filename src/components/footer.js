@@ -1,9 +1,11 @@
 import { Container, Divider, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import { useAuth } from "../context/authContext";
 import { SubTitle, Title } from "../styledComponents/fifaTypography";
 import Logo from "./logo";
 
 export default function Footer() {
+	const { user } = useAuth();
 	const itemsExplorar = [
 		"Competiciones",
 		"Sobre Nosotros",
@@ -22,7 +24,7 @@ export default function Footer() {
 		"Contacta con la FIFA"
 	]
 	return (
-		<Box pt={5} bgcolor="background.default">
+		(user) && <Box pt={5} bgcolor="background.default">
 			<Divider color="palette.divider" />
 			<Container sx={{ py: 3 }}>
 				<Logo />
@@ -37,7 +39,7 @@ export default function Footer() {
 					<div>
 						<Title mb={2} variant="h4">VISITE TAMBIÉN</Title>
 						{itemsVisiteTambien.map(item =>
-							<Title mb={1} key={item}>{item}</Title>
+							<SubTitle mb={1} key={item}>{item}</SubTitle>
 						)}
 					</div>
 				</Stack>
@@ -49,8 +51,8 @@ export default function Footer() {
 					<SubTitle >Portal de Protección de Datos de la FIFA</SubTitle>
 					<SubTitle >Descárgalo</SubTitle>
 				</Stack>
-				<Title my={1} display="block" variant="caption">Copyright © 1994 - 2022 FIFA. Reservados todos los derechos.</Title>
-				<Title display="block" variant="caption">Configuración de cookies</Title>
+				<SubTitle my={1} display="block" variant="caption">Copyright © 1994 - 2022 FIFA. Reservados todos los derechos.</SubTitle>
+				<SubTitle display="block" variant="caption">Configuración de cookies</SubTitle>
 			</Container>
 		</Box>
 	)

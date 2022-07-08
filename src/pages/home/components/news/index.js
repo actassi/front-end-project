@@ -27,7 +27,7 @@ export default function News() {
 							<SubTitle>
 								Entrevistas, noticias y reportajes de la Copa Mundial de la FIFA Catar 2022™.
 							</SubTitle>
-							<Button color="primary">Lee todas las noticias de Catar 2022</Button>
+
 						</Stack>
 					</Grid>
 					<Grid item md={9}>

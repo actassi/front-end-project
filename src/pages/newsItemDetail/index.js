@@ -11,10 +11,10 @@ export default function NewsItemDetail() {
 
 	return (
 		loading ? <>cargando...</> :
-			<Stack direction="column" spacing={4} alignItems="center">
+			<Stack bgcolor={"background.default"} direction="column" spacing={4} alignItems="center">
 
 				<ContainerBanner>
-					<div style={{ overflow: "hidden", height: "750px", width: "100%", marginTop: "-5%" }}>
+					<div style={{ overflow: "hidden", height: "750px", width: "100%" }}>
 						<img width="100%" src={"/" + newsItemDetail.imgFull} alt="news" />
 						<TextBanner top="15%" sx={{
 							"textShadow": "-1px 1px 0 #000, 1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000"

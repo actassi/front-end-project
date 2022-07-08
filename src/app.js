@@ -44,6 +44,7 @@ function App() {
 					<Route path="/register" element={<Register />} />
 					<Route path="/newsItemDetail/:id" element={<NewsItemDetail />} />
 				</Routes>
+
 				<Footer />
 			</AuthProvider>
 
