@@ -166,6 +166,7 @@ const { news, loading } = useNews()
 
 | Pages/Componentes | Nombre | Status |
 | ------------- | ------------- | ------------- |
-| Registro, Login, Perdi mi contraseña  | Andrea Tassi  | Done |
+| Registro, Login, Perdi mi contraseña  | Andre | Done |
 | Home Page, Detalle noticia page, footer, firebase service  | Seba  |Done  |
 | DarkMode y NavBar| Seba  | In Progress  |
+| Fixture | Andre  | In Progress  |
