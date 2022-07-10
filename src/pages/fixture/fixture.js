@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+import './fixture.css';
 
-var NewComponent = React.createClass({
-    render: function() {
-      return (
-        <div>
+
+function Fixture() {
+  return (
+    <div className="App">
           <section id="presentation">
             <div className="presentation-group">
               <ul><h2 className="presentation-group-letter">Grupo A</h2>
@@ -1447,7 +1448,11 @@ var NewComponent = React.createClass({
               <input className="quickDelate" type="submit" defaultValue="Resetear Brackets" />
             </form>
           </section>
-        </div>
-      );
-    }
-  });
+        
+     
+    
+      </div>
+  );
+}
+
+export default Fixture;

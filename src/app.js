@@ -9,6 +9,7 @@ import { createTheme } from "@mui/material";
 import Footer from "./components/footer";
 import NewsItemDetail from "./pages/newsItemDetail";
 import NavBar from "./components/navBar";
+import Fixture from "./pages/fixture/fixture.js";
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
 						}
 					/>
 					<Route path="/register" element={<Register />} />
+					<Route path="/fixture" element={<Fixture />} />
 					<Route path="/newsItemDetail/:id" element={<NewsItemDetail />} />
 				</Routes>
 
