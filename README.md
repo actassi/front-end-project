@@ -168,5 +168,5 @@ const { news, loading } = useNews()
 | ------------- | ------------- | ------------- |
 | Registro, Login, Perdi mi contraseña  | Andre | Done |
 | Home Page, Detalle noticia page, footer, firebase service  | Seba  |Done  |
-| DarkMode y NavBar| Seba  | In Progress  |
+| DarkMode y NavBar| Seba  | Done  |
 | Fixture | Andre  | In Progress  |
