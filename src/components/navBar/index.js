@@ -67,7 +67,7 @@ const NavBar = () => {
 						<Button color="primary">Fixture</Button>
 					</Box>
 					<Stack direction={"row"} alignItems="center">
-						<Button color="primary">Perfil</Button>
+
 						<Button onClick={handleLoged} color="primary">{(isLoged) ? "Cerrar sesión" : "Iniciar sesión"}</Button>
 						<Button onClick={handleDarkMode} color="primary">
 							{(mode === 'light') ? "Dark Mode" : "Light Mode"}
