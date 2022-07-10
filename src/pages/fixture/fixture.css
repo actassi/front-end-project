@@ -1,8 +1,14 @@
-
 /* body */
 
-@font-face { font-family: QatarBold; src: url('./assets/typography/Qatar2022Arabic-Bold.ttf'), format('ttf'); }
-@font-face { font-family: QatarHeavy; src: url('./assets/typography/Qatar2022Arabic-Heavy.ttf'), format('ttf'); }
+@font-face {
+  font-family: QatarBold;
+  src: url('../../assets/typography/Qatar2022Arabic-Bold.ttf'), format('ttf');
+}
+
+@font-face {
+  font-family: QatarHeavy;
+  src: url('../../assets/typography/Qatar2022Arabic-Heavy.ttf'), format('ttf');
+}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -17,15 +23,14 @@ input[type=number] {
 body {
   font-family: 'QatarBold';
   background: rgb(128, 25, 45);
-  background: linear-gradient(120deg, rgba(117,25,43,1) 0%, rgb(35, 6, 16) 100%);
+  background: linear-gradient(120deg, rgba(117, 25, 43, 1) 0%, rgb(35, 6, 16) 100%);
   color: white;
   margin: 0;
 }
 
 /* header */
 
-header{
-  margin-top: 20px;
+header {
   text-align: center;
   background: none;
   display: flex;
@@ -33,12 +38,12 @@ header{
   justify-content: center;
 }
 
-#logo{
+#logo {
   width: 80px;
   height: 80px;
 }
 
-h1{
+h1 {
   font-size: 30px;
   margin: 0px;
   padding: 0px;
@@ -52,13 +57,13 @@ h1{
 
 /* presentacion de grupos y equipos */
 
-#presentation{
+#presentation {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-.presentation-group{
+.presentation-group {
   width: 20%;
   min-width: 150px;
   margin: 10px;
@@ -66,7 +71,7 @@ h1{
   padding: 0 20px;
 }
 
-.presentation-group-letter{
+.presentation-group-letter {
   text-align: center;
   margin: 15px 0;
 }
@@ -121,7 +126,7 @@ ul {
 
 /* partidos */
 
-#matches-section{
+#matches-section {
   text-align: center;
   display: flex;
   justify-content: space-evenly;
@@ -164,13 +169,13 @@ ul {
   justify-content: center;
 }
 
-.team-1{
+.team-1 {
   width: 30%;
   text-align: right;
   margin-right: 5px;
 }
 
-.team-2{
+.team-2 {
   width: 30%;
   text-align: left;
   margin-left: 5px;
@@ -182,7 +187,7 @@ ul {
   width: 2rem;
 }
 
-table{
+table {
   margin: auto;
 }
 
@@ -208,7 +213,7 @@ table{
   border-radius: 10px;
 }
 
-.crear-button:hover{
+.crear-button:hover {
   width: 90%;
   height: 60px;
   text-align: center;
@@ -226,7 +231,7 @@ table{
   margin-bottom: 20px;
 }
 
-.control-button input{
+.control-button input {
   width: 100%;
   height: 30px;
   text-align: center;
@@ -237,7 +242,7 @@ table{
   border-radius: 8px;
 }
 
-.control-button input:hover{
+.control-button input:hover {
   width: 100%;
   height: 30px;
   text-align: center;
@@ -264,7 +269,10 @@ table{
   justify-content: space-evenly;
 }
 
-.eighths, .quarters, .semis, .final{
+.eighths,
+.quarters,
+.semis,
+.final {
   background-color: none;
   display: flex;
   flex-direction: column;
@@ -273,6 +281,7 @@ table{
   width: 20%;
   width: auto;
 }
+
 #bracket .final {
   width: 40%;
 }
@@ -314,13 +323,15 @@ table{
   justify-content: space-between;
 }
 
-.quarterMatches fieldset > *, .semisMatches fieldset > *, .finalMatch > *{
+.quarterMatches fieldset>*,
+.semisMatches fieldset>*,
+.finalMatch>* {
   margin: auto 0;
 }
 
 .champion {
   height: 80px;
-  background-color:null;
+  background-color: null;
   font-size: 60px;
 }
 
@@ -329,4 +340,8 @@ table{
 /* elementos escondidos */
 .hidden {
   display: none;
+}
+
+.App {
+  margin-top: 100px;
 }
