@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: QatarBold;
-  src: url('../../assets/typography/Qatar2022Arabic-Bold.ttf'), format('ttf');
+  src: url('../../assets/typography/Qatar2022Arabic-Bold.ttf');
 }
 
 @font-face {
   font-family: QatarHeavy;
-  src: url('../../assets/typography/Qatar2022Arabic-Heavy.ttf'), format('ttf');
+  src: url('../../assets/typography/Qatar2022Arabic-Heavy.ttf');
 }
 
 input::-webkit-outer-spin-button,
