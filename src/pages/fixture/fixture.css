@@ -13,7 +13,7 @@
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  margin: 0;
+  /*margin: 0;*/
 }
 
 input[type=number] {
@@ -117,11 +117,14 @@ ul {
 }
 
 .sectionsdivision {
+  
   margin-top: 30px;
   height: 20px;
   width: 400px;
   clip-path: polygon(0 50%, 3% 0%, 6% 45%, 94% 45%, 97% 0%, 100% 50%, 97% 100%, 94% 55%, 6% 55%, 3% 100%);
   background-color: rgb(237, 79, 108);
+  
+  
 }
 
 /* partidos */
